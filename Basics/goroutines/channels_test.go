@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func Test(t *testing.T) {
+func Test_Channel_for_sync(t *testing.T) {
 	ch := make(chan int)
 	go send(ch)
 	go receive(ch)
@@ -26,7 +26,7 @@ func receive(ch chan int) {
 	fmt.Println("Received: ", received)
 }
 
-func TestWaitGroup(t *testing.T) {
+func Test_WaitGroup(t *testing.T) {
 	wg := new(sync.WaitGroup)
 	wg.Add(1)
 
