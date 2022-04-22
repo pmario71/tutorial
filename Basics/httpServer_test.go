@@ -53,13 +53,3 @@ func TestRunServer_and_call_API(t *testing.T) {
 		t.Fatalf(`Hello("") = %q, want "", error`, str)
 	}
 }
-
-// TestHelloEmpty calls greetings.Hello with an empty string,
-// checking for an error.
-func TestHelloEmpty(t *testing.T) {
-	msg := Hello("Mario")
-
-	if msg != "Hello Mario!" {
-		t.Fatalf(`Hello("") = %q, want "", error`, msg)
-	}
-}

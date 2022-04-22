@@ -7,7 +7,6 @@ package basics
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -15,10 +14,6 @@ import (
 	"sync"
 	"time"
 )
-
-func Hello(text string) string {
-	return fmt.Sprintf("Hello %v!", text)
-}
 
 func handle(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Hello Mario!")
