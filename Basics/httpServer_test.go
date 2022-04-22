@@ -12,6 +12,9 @@ import (
 )
 
 func TestRunServer_and_call_API(t *testing.T) {
+	t.Error("Not yet working!")
+	t.FailNow()
+
 	wg := new(sync.WaitGroup)
 	wg.Add(1)
 
@@ -24,7 +27,7 @@ func TestRunServer_and_call_API(t *testing.T) {
 
 	// wait until server is up and running
 	wg.Wait()
-	time.Sleep(time.Millisecond*200)
+	time.Sleep(time.Millisecond * 200)
 
 	req, err := http.NewRequest("GET", "http://localhost:9001", nil)
 	if err != nil {
