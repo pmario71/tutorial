@@ -11,6 +11,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 	"sync"
 	"time"
 )
@@ -36,7 +37,7 @@ func CreateServer(server *http.Server, wg *sync.WaitGroup) {
 
 	err := server.ListenAndServe()
 
-	if err != nil {
+	if err != nil && !strings.Contains(err.Error(), "Server closed") {
 		log.Fatal(err)
 	}
 }
